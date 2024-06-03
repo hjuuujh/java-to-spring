@@ -16,3 +16,13 @@
 - Spring Boot 2.6.4
 - start.spring.io 활용
 
+4. 요구사항
+- 편의점 결제
+- 편의점은 G25, CU, 세븐
+
+5. 요구사항 분석 결과
+- 편의점은 정해져있으니 enum으로 관리
+- 결제수단은 일단 money만 사용
+
+6. 클래스 UML
+![class-uml](./class-uml.png)
