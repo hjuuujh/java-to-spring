@@ -25,4 +25,5 @@
 - 결제수단은 일단 money만 사용
 
 6. 클래스 UML
+
 ![class-uml](./class-uml.png)
