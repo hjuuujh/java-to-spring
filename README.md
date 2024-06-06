@@ -36,3 +36,8 @@
 - 어떤 클래스가 어떤 구현체를 사용하는지 -> 설정을 별도의 클래스로 분리
 ![solid](./solid.png)
 
+8. Resource 구현체 목록
+- UrlResource : java.net.URL을 래핑한 버전, 다양한 종류의 Resource에 접근 가능하지만 기본적으로 http(s) 로 원격 접근
+- ClassPath : classpath(소스코드를 빌드한결과(기본적으로 target/classes 폴더)) 하위의 리소스 접근시 사용
+- FileSystemResource : file 다루기위한 리소스 구현체
+- ServeltContextResource, InputStreamResource, ByteArrayResource : Servlet 어플리케이션 루트 하위 파일, InputStream, ByteArrayInput 스트림을 가져오기 위한 구현체 

@@ -2,10 +2,14 @@ package com.zerobase.convpay.config;
 
 import com.zerobase.convpay.ConvpayApplication;
 import com.zerobase.convpay.service.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.Resource;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
 
@@ -64,4 +68,20 @@ public class ApplicationConfig {
     // @ComponentScan(basePackageClasses = ConvpayApplication.class)
     // -> spring boot 만들면 켜져있음
     // @Component 붙여서 만들면 알아서 만든 class들을 springboot가 띄워줌
+
+    // Resrouce(외부자원 가져오기)
+    @Autowired
+    private ApplicationContext applicationContext;
+
+    public void getResource(){
+        Resource resource1 = applicationContext.getResource("classpath:~~~.txt");
+        Resource resource2 = applicationContext.getResource("file:/~~~.txt"); // pc에 있는
+        Resource resource3 = applicationContext.getResource("https://~~~.txt"); //외부 서버에있는
+
+        try {
+            System.out.println(resource1.contentLength());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
