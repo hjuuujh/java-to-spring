@@ -7,7 +7,7 @@
 2. AOP (관점지향 프로그래밍) Aspect Oriented Programming
 - 여러 메서드에 동일한 코드가 반복된다면 -> AOP 사용
 - 공통적인 관심사(로깅, 트랜잭션, 인증)을 여러 메서드의 호출 전/후에 원할때마다 손쉽게 추가
-- 용어가 중요
+- 용어가 중요  
 Aspect : 여러 클래스나 기능에 걸쳐서있는 관심사, 그들을 모듈화함 ex) @Transactional @Cacheable  
 Adive : AOP에서 실제로 적용하는 기능(로깅, 트랜잭션, 캐시, 인증 등)  
 Join point : 모듈화된 특정 기능이 실행될 수 있는 연결 포인트  
@@ -36,8 +36,8 @@ validate() : 원하는 검증 진행
 실무 활용 패턴
 요청 dto에서 java bean validation으로 단순 데이터 1차 검증 -> 로직 초기 2차로 비즈니스 검증후 실패시에 custom eception해서 예외를 던지고 예외처리해 응답 생성  
 <br/>          
-- Data Binding : 사용자나 외부 서버의 요청 데이터를 특정 도메인 객체에 저장해 프로그램의 Request에 담아주는것
-- 종류
+- Data Binding : 사용자나 외부 서버의 요청 데이터를 특정 도메인 객체에 저장해 프로그램의 Request에 담아주는것  
+- 종류  
 Converter<S, T> Interface : Source라는 타입 받아서 Target이라는 타입으로 변환해주는 interface  
 Formatter : 특정 개체 <-> String 간 변환 담당 / 실제로 더많이 사용
     
