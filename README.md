@@ -35,7 +35,7 @@ validate() : 원하는 검증 진행
 주의사항 : 너무 여러군데 픝어져있으면 테스트 및 유지보수성 떨어짐 -> 가능한 로직 초기에 수행후 실패시에는 exception을 던지는게 처리 편함   
 실무 활용 패턴
 요청 dto에서 java bean validation으로 단순 데이터 1차 검증 -> 로직 초기 2차로 비즈니스 검증후 실패시에 custom eception해서 예외를 던지고 예외처리해 응답 생성  
-<br/>          
+
 - Data Binding : 사용자나 외부 서버의 요청 데이터를 특정 도메인 객체에 저장해 프로그램의 Request에 담아주는것  
 - 종류  
 Converter<S, T> Interface : Source라는 타입 받아서 Target이라는 타입으로 변환해주는 interface  
