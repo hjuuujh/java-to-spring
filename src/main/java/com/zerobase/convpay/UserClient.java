@@ -18,8 +18,11 @@ public class UserClient {
         // [사용자] -> 편결이 -> 머니
 //        ApplicationConfig aConfig = new ApplicationConfig();
 //        ConveniencePayService conveniencePayService = aConfig.conveniencePayServiceDiscountPayMethod();
-        ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+        // application context가 spring
+        // ApplicationConfig 파일 사용해 설정 : bean들 등록되어있음
+//        ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
         ConveniencePayService conveniencePayService = context.getBean("conveniencePayService", ConveniencePayService.class);
 
         // G25 결제 1000원
