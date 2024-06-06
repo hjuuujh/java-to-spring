@@ -2,6 +2,7 @@ package com.zerobase.convpay.service;
 
 import com.zerobase.convpay.dto.*;
 import com.zerobase.convpay.type.*;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -18,14 +19,16 @@ public class ConveniencePayService {
     private final Map<PayMethodType, PaymentInterface> paymentInterfaceMap = new HashMap<>();
     private final DiscountInterface discountInterface;
 
-    public ConveniencePayService(Set<PaymentInterface> paymentInterfaceSet, DiscountInterface discountByConvenience) {
+    public ConveniencePayService(Set<PaymentInterface> paymentInterfaceSet,
+//                                 @Qualifier("discountByConvenience") // 빈의 구현체가 여러개인 경우 주입받는 방법 2
+                                 DiscountInterface discountInterface) {
         paymentInterfaceSet.forEach(
                 paymentInterface -> paymentInterfaceMap.put(
                         paymentInterface.getPayMethodType(),
                         paymentInterface
                 )
         );
-        this.discountInterface = discountByConvenience;
+        this.discountInterface = discountInterface;
     }
 
     // 결제

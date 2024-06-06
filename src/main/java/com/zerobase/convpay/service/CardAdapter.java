@@ -1,12 +1,19 @@
 package com.zerobase.convpay.service;
 
 import com.zerobase.convpay.type.*;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 @Component
+// bean의 스코프
+@Scope("singleton") // 일반적 방법 하나만 만들어서 계속 재활용
+// prototype 매번 새로 만드는 방법
+//@Scope("request") 요청따라 계속 새로 만듦
+//@Scope("session") 세션마다 계속 새로 만듦
+//@Scope("prototype")
 public class CardAdapter implements PaymentInterface {
     // 1. 인증
     public void authorization() {
