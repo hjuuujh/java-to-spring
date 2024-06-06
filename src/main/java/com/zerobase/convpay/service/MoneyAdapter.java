@@ -1,7 +1,9 @@
 package com.zerobase.convpay.service;
 
 import com.zerobase.convpay.type.*;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MoneyAdapter implements PaymentInterface{
     // 너무 작은 금액이나 큰 금액 결제하는 경우는 실패
     public MoneyUseResult use(Integer payAmount){

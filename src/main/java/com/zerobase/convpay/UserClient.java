@@ -21,7 +21,7 @@ public class UserClient {
         // application context가 spring
         // ApplicationConfig 파일 사용해 설정 : bean들 등록되어있음
 //        ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
-
+        // xml 파일 이용해 등록
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
         ConveniencePayService conveniencePayService = context.getBean("conveniencePayService", ConveniencePayService.class);
 
