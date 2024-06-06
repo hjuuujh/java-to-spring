@@ -19,9 +19,9 @@ Weaving : Advice를 비즈니스 로직 코드에 삽입하는 것
 
 AspectJ : AOP를 제대로 사용하기위해 필요한 라이브러리
 
-3. Validation
+3. Validation, Data Binding
 - 유효성 검증, 사용자 또는 타 서버의 요청(http request) 내용에서 잘못된 내용이 있는지 확인하는 행위
-- 종류
+- 종류  
 데이터 검증 : 필수 데이터 존재 유무 / 값의 범위 / 특정 형식에 맞춘 데이터  
 비즈니스 검증 : 서비스에 정책 따라 데이터 확인해 검증 / 외부 API호출하거나 DB의 데이터까지 조회해 검증하는 경우도 존재  
 - Spring의 Validation
@@ -41,7 +41,13 @@ validate() : 원하는 검증 진행
 Converter<S, T> Interface : Source라는 타입 받아서 Target이라는 타입으로 변환해주는 interface  
 Formatter : 특정 개체 <-> String 간 변환 담당 / 실제로 더많이 사용
     
-    
+4. 스프링 표현 언어 (SpEL)
+- Expression Language는 짧고 간단한 문법을 통해 필요한 데이터나 설정 값을 얻어올 수 있게 하는 특별한 형태의 표현식에 가까운 간편한 언어
+- ""안에 들어있는 문자열을 평가 evaluation해서 결과갑승ㄹ 만들어냄
+- 기본적으로 #{<expression string>} 방식으로 property 설정
+- @Value("#{ 2 eq 2}") : true
+- @value("${server.hostname}") : www.server.com
+- @value("#{ ${server.hostname} eq 'www.server.com'}") : true
     
     
     
